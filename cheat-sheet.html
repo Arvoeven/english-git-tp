@@ -125,6 +125,14 @@ Your commit message
         </section>
 
         <section class="command">
+            <h2>Merge a branch</h2>
+            <p>Checkout the branch where you want to merge another branch</p>
+            <pre class="bash">git checkout master</pre>
+            <p>Merge a branch into the current branch</p>
+            <pre class="bash">git merge your-branch</pre>
+        </section>
+
+        <section class="command">
             <h2>Update your branch</h2>
             <p>Prepare your modifications</p>
             <pre class="bash">git add -A</pre>
@@ -136,12 +144,6 @@ Your commit message
             <pre class="bash">git rebase origin/your-branch</pre>
             <p>Reapply your modifications</p>
             <pre class="bash">git stash apply</pre>
-        </section>
-
-        <section class="command">
-            <h2>Deal with conflicts</h2>
-            <p>When a file are twice modified</p>
-            <pre class="bash">git push origin your-branch</pre>
         </section>
     </section>
 </body>
