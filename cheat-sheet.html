@@ -49,7 +49,7 @@
             background: #f1f1f1;
         }
 
-        section.command pre:before{
+        section.command pre.bash:before{
             content: '$ ';
         }
     </style>
@@ -61,31 +61,88 @@
         <section class="command">
             <h2>Init</h2>
             <p>Create a repository in a folder</p>
-            <pre>git init</pre>
+            <pre class="bash">git init</pre>
         </section>
 
         <section class="command">
             <h2>Clone</h2>
             <p>Clone a repository in a new folder</p>
-            <pre>git clone git@github.com:Luuka/english-git-tp.git</pre>
+            <pre class="bash">git clone git@github.com:Luuka/english-git-tp.git</pre>
+        </section>
+
+        <section class="command">
+            <h2>Create a branch</h2>
+            <p>Create a branch and jump to it</p>
+            <pre class="bash">git checkout -b "your-branch"</pre>
+        </section>
+
+        <section class="command">
+            <h2>Jump to another branch</h2>
+            <p>List all existing branchs</p>
+            <pre class="bash">git branch</pre>
+            <p>Checkout to another branch</p>
+            <pre class="bash">git checkout your-branch</pre>
         </section>
 
         <section class="command">
             <h2>Prepare a commit</h2>
+            <p>Check modifications</p>
+            <pre class="bash">git diff</pre>
             <p>Add changed file(s) to the commit</p>
-            <pre>git add ./path/to/file</pre>
+            <pre class="bash">git add ./path/to/file</pre>
             <p>Or all modified files</p>
-            <pre>git add -A</pre>
+            <pre class="bash">git add -A</pre>
             <p>Commit with a message</p>
-            <pre>git commit -m "Your commit message"</pre>
+            <pre class="bash">git commit -m "Your commit message"</pre>
         </section>
 
         <section class="command">
             <h2>Modify a non-published commit</h2>
             <p>Add new modifications to last commit</p>
-            <pre>git commit --amend</pre>
+            <pre class="bash">git commit --amend</pre>
+            <p>Git will open your previous commit message in a text editor. Edit your commit message and exit the editor.</p>
+            <pre>
+Your commit message
+
+# Veuillez saisir le message de validation pour vos modifications. Les lignes
+# commençant par '#' seront ignorées, et un message vide abandonne la validatio$
+#
+# Date :       Wed Oct 25 09:50:12 2017 +0200
+#
+# Sur la branche master
+# Votre branche est en avance sur 'origin/master' de 1 commit.
+#   (utilisez "git push" pour publier vos commits locaux)
+#
+# Modifications qui seront validées :
+#       nouveau fichier : cheat-sheet.html
+#</pre>
         </section>
 
+        <section class="command">
+            <h2>Publish your modifications </h2>
+            <p>Push the origin branch to the remote branch</p>
+            <pre class="bash">git push origin your-branch</pre>
+        </section>
+
+        <section class="command">
+            <h2>Update your branch</h2>
+            <p>Prepare your modifications</p>
+            <pre class="bash">git add -A</pre>
+            <p>Put your changes aside</p>
+            <pre class="bash">git stash save</pre>
+            <p>Download remote modifications on origin branchs</p>
+            <pre class="bash">git fetch origin</pre>
+            <p>Apply changes from remote to local branch</p>
+            <pre class="bash">git rebase origin/your-branch</pre>
+            <p>Reapply your modifications</p>
+            <pre class="bash">git stash apply</pre>
+        </section>
+
+        <section class="command">
+            <h2>Deal with conflicts</h2>
+            <p>When a file are twice modified</p>
+            <pre class="bash">git push origin your-branch</pre>
+        </section>
     </section>
 </body>
 </html>
