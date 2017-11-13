@@ -105,8 +105,8 @@
 
         <section class="command">
             <h2>Fork + clone</h2>
-            <p>Fork the repository in yout GitHub account : <a href="https://github.com/Luuka/english-git-tp">https://github.com/Luuka/english-git-tp</a></p>
-            <p>Clone your repository on yout computer</p>
+            <p>Fork the repository in your GitHub account : <a href="https://github.com/Luuka/english-git-tp">https://github.com/Luuka/english-git-tp</a></p>
+            <p>Clone your repository on your computer</p>
 
             <pre class="bash">git clone https://github.com/YOUR_USER_NAME/english-git-tp</pre>
         </section>
@@ -114,15 +114,15 @@
         <section class="command">
             <h2>Create a branch from master</h2>
             <p>The first step is to create a <em>dev</em> branch from master.</p>
-            <pre class="bash spoiler">git checkout -b dev</pre>
+            <pre class="bash">git checkout -b dev</pre>
             <p>And go back to the <em>master</em> branch.</p>
-            <pre class="bash spoiler">git checkout master</pre>
+            <pre class="bash">git checkout master</pre>
         </section>
 
         <section class="command">
             <h2>Add a file</h2>
             <p>Create a <em>dev-1</em> branch</p>
-            <pre class="bash spoiler">git checkout -b dev-1</pre>
+            <pre class="bash">git checkout -b dev-1</pre>
             <p>create a <em>/data</em> folder and a <em>conf.yml</em> file inside</p>
             <pre>
 home:
@@ -130,61 +130,61 @@ home:
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo reprehenderit non debitis ad atque dicta impedit consequatur nisi, asperiores excepturi fugiat, modi sit. Veniam at magnam, explicabo saepe neque placeat!'
     version: 0.1</pre>
             <p>Show changes</p>
-            <pre class="bash spoiler">git diff</pre>
+            <pre class="bash">git diff</pre>
             <p>Prepare your commit</p>
-            <pre class="bash spoiler">git add -A</pre>
+            <pre class="bash">git add -A</pre>
             <p>Create a commit</p>
-            <pre class="bash spoiler">git commit -m "Add conf file"</pre>
+            <pre class="bash">git commit -m "Add conf file"</pre>
         </section>
 
         <section class="command">
             <h2>Merge a branch into another one</h2>
             <p>Go back on <em>master</em></p>
-            <pre class="bash spoiler">git checkout master</pre>
-            <p>Merge <em>dev</em> into <em>master</em></p>
-            <pre class="bash spoiler">git merge dev-1</pre>
+            <pre class="bash">git checkout master</pre>
+            <p>Merge <em>dev-1</em> into <em>master</em></p>
+            <pre class="bash">git merge dev-1</pre>
         </section>
 
         <section class="command">
             <h2>Deal with conflicts</h2>
             <p>Create two new branches from master</p>
-            <pre class="bash spoiler">git checkout -b dev-2</pre>
-            <pre class="bash spoiler">git checkout master</pre>
-            <pre class="bash spoiler">git checkout -b dev-3</pre>
+            <pre class="bash">git checkout -b dev-2</pre>
+            <pre class="bash">git checkout master</pre>
+            <pre class="bash">git checkout -b dev-3</pre>
             <hr>
             <p>Change version number on <em>conf.yml</em> on the <em>dev-2</em> branch</p>
-            <pre class="bash spoiler">git checkout dev-2</pre>
+            <pre class="bash">git checkout dev-2</pre>
             <br>
             <pre>    version: 0.2</pre>
             <p>Commit your changes</p>
-            <pre class="bash spoiler">git add -A</pre>
-            <pre class="bash spoiler">git commit -m "0.1 -> 0.2"</pre>
+            <pre class="bash">git add -A</pre>
+            <pre class="bash">git commit -m "0.1 -> 0.2"</pre>
 
             <hr>
 
             <p>Change version number on <em>conf.yml</em> on the <em>dev-3</em> branch</p>
-            <pre class="bash spoiler">git checkout dev-3</pre>
+            <pre class="bash">git checkout dev-3</pre>
             <br>
             <pre>    version: 0.3</pre>
             <p>Commit your changes</p>
-            <pre class="bash spoiler">git add -A</pre>
-            <pre class="bash spoiler">git commit -m "0.1 -> 0.3"</pre>
+            <pre class="bash">git add -A</pre>
+            <pre class="bash">git commit -m "0.1 -> 0.3"</pre>
 
             <hr>
             <p>Merge <em>dev-2</em> into master</p>
-            <pre class="bash spoiler">git checkout master</pre>
-            <pre class="bash spoiler">git merge dev-2</pre>
+            <pre class="bash">git checkout master</pre>
+            <pre class="bash">git merge dev-2</pre>
 
             <p>Try to merge <em>dev-3</em> into master</p>
-            <pre class="bash spoiler">git merge dev-3</pre>
+            <pre class="bash">git merge dev-3</pre>
 
             <p>A message about conflicts will appear. Open <em>conf.yml</em> to resolve the conflict and only keep the 0.3 version. After that, commit your correction</p>
 
-            <pre class="bash spoiler">git add -A</pre>
-            <pre class="bash spoiler">git add commit</pre>
+            <pre class="bash">git add -A</pre>
+            <pre class="bash">git commit</pre>
 
             <p>Push your <em>master</em> branch from origin to the server</p>
-            <pre class="bash spoiler">git push origin master</pre>
+            <pre class="bash">git push origin master</pre>
 
         </section>
 
@@ -192,16 +192,16 @@ home:
             <h2>Update a branch</h2>
 
             <p>After the merge of <em>dev-2</em> and <em>dev-3</em> the <em>dev</em> branch is late by at least 3 commits. We need to update it to get new modifications without use a merge.</p>
-            <pre class="bash spoiler">git checkout dev</pre>
+            <pre class="bash">git checkout dev</pre>
 
-            <p>Retrieve date from the remote server to origin</p>
-            <pre class="bash spoiler">git fetch origin</pre>
+            <p>Retrieve data from the remote server to origin</p>
+            <pre class="bash">git fetch origin</pre>
 
             <p>Rebase your branch from <em>master</em></p>
-            <pre class="bash spoiler">git rebase origin/master</pre>
+            <pre class="bash">git rebase origin/master</pre>
 
             <p>Check if new commits have been added to the <em>dev</em> branch</p>
-            <pre class="bash spoiler">git log</pre>
+            <pre class="bash">git log</pre>
 
         </section>
 
